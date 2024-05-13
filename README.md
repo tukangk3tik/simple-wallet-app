@@ -74,8 +74,8 @@ docker-compose up
 
 For the API documentation you can check the postman collection with its example and environment. You can get the postman by this links:
 
-* [Postman collection](https://github.com/tukangk3tik/simple-wallet-app/docs/WalletApp.postman_collection.json)
-* [Postman env](https://github.com/tukangk3tik/simple-wallet-app/docs/WalletApp.postman_environment.json)
+* [Postman collection](https://github.com/tukangk3tik/simple-wallet-app/blob/main/docs/WalletApp.postman_collection.json)
+* [Postman env](https://github.com/tukangk3tik/simple-wallet-app/blob/main/docs/WalletApp.postman_environment.json)
 
 Below is list of route provided:
 
