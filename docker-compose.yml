@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: "wallet-app-postgres"
+    image: postgres:14
+    hostname: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: t3st123T 
+      POSTGRES_USER: postgres
+      POSTGRES_DB: wallet-db
+    volumes:
+      - ./data-postgres:/var/lib/postgresql/data # postgres data mounting point
+      - ./sql:/root/sql # sql for export/import
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', 'postgres', '-d', 'wallet-db']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  wallet-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wallet-app-api
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - 8080:8080
+    depends_on:
+      postgres: 
+        condition: service_healthy
+        restart: true
+    volumes:
+      - ./:/app

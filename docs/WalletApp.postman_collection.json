@@ -1,0 +1,572 @@
+{
+	"info": {
+		"_postman_id": "54e43632-746d-4865-89f4-c0fbb32c8e95",
+		"name": "WalletApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26191689"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"alice@mail.io\",\n    \"password\": \"test123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alice@mail.io\",\n    \"password\": \"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "206"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 12:14:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTcxNTUxNjA0NCwiZXhwIjoxNzE1NTE5NjQ0fQ.RRNSYh-bVnyguL2Grstffi0P4Hsd8XdsSHLqflsHpwc\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mario@mail.com\",\n    \"password\" : \"test1234\",\n    \"name\": \"Mario\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mario@mail.com\",\n    \"password\" : \"test1234\",\n    \"name\": \"Mario\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "75"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 14:03:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Success create new user. Please login\",\n    \"data\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"accountType\" : 1,\n    \"amount\": 2,\n    \"toAddress\": \"1145678901\" \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/transaction/withdraw",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"withdraw"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Withdraw",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"accountType\" : 1,\n    \"amount\": 2,\n    \"toAddress\": \"1145678901\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/transaction/withdraw",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								"withdraw"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "144"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 10:13:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Your withdrawal is being processing, please wait\",\n    \"data\": {\n        \"transaction_id\": \"wd-9cbde0ff-820f-4302-8b05-f7dccb1bc4f8\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get My Wallets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/wallets?userId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"wallets"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get My Wallets",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/wallets?userId=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"wallets"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "256"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 12:13:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Success fetch wallets\",\n    \"data\": [\n        {\n            \"accountTypeId\": 2,\n            \"accountType\": {\n                \"accountTypeName\": \"CREDIT\"\n            },\n            \"address\": \"1234567890\",\n            \"balance\": 100\n        },\n        {\n            \"accountTypeId\": 1,\n            \"accountType\": {\n                \"accountTypeName\": \"DEBIT\"\n            },\n            \"address\": \"1134567890\",\n            \"balance\": 92\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get My Wallets Transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/user/wallets/:walletId/histories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"wallets",
+						":walletId",
+						"histories"
+					],
+					"variable": [
+						{
+							"key": "walletId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get My Wallets Transactions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/wallets/:walletId/histories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"wallets",
+								":walletId",
+								"histories"
+							],
+							"variable": [
+								{
+									"key": "walletId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "1015"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 12:13:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Success get histories\",\n    \"data\": [\n        {\n            \"transaction_id\": \"wd-09692f90-1b56-4138-9eb3-fe3dbb35590e\",\n            \"userAccount\": {\n                \"address\": \"1134567890\",\n                \"balance\": 92\n            },\n            \"accountType\": {\n                \"accountTypeName\": \"DEBIT\"\n            },\n            \"amount\": -2,\n            \"fromAddress\": \"\",\n            \"toAddress\": \"1145678901\",\n            \"transactionTime\": \"2024-05-12T07:49:45.897Z\",\n            \"status\": \"SUCCESS\",\n            \"message\": \"Success, 2 has send to 1145678901\"\n        },\n        {\n            \"transaction_id\": \"wd-12d9f6c8-38ef-40fa-bd03-f4a2240b10de\",\n            \"userAccount\": {\n                \"address\": \"1134567890\",\n                \"balance\": 92\n            },\n            \"accountType\": {\n                \"accountTypeName\": \"DEBIT\"\n            },\n            \"amount\": -2,\n            \"fromAddress\": \"\",\n            \"toAddress\": \"1145678901\",\n            \"transactionTime\": \"2024-05-12T10:13:39.740Z\",\n            \"status\": \"SUCCESS\",\n            \"message\": \"Success, 2 has send to 1145678901\"\n        },\n        {\n            \"transaction_id\": \"wd-9cbde0ff-820f-4302-8b05-f7dccb1bc4f8\",\n            \"userAccount\": {\n                \"address\": \"1134567890\",\n                \"balance\": 92\n            },\n            \"accountType\": {\n                \"accountTypeName\": \"DEBIT\"\n            },\n            \"amount\": -2,\n            \"fromAddress\": \"\",\n            \"toAddress\": \"1145678901\",\n            \"transactionTime\": \"2024-05-12T10:13:41.227Z\",\n            \"status\": \"SUCCESS\",\n            \"message\": \"Success, 2 has send to 1145678901\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transaction Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/transaction/:transactionId",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						":transactionId"
+					],
+					"variable": [
+						{
+							"key": "transactionId",
+							"value": "wd-09692f90-1b56-4138-9eb3-fe3dbb35590e"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Transaction Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/transaction/:transactionId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"transaction",
+								":transactionId"
+							],
+							"variable": [
+								{
+									"key": "transactionId",
+									"value": "wd-09692f90-1b56-4138-9eb3-fe3dbb35590e"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "325"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 May 2024 12:13:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"OK\",\n    \"message\": \"Success fetch transaction\",\n    \"data\": {\n        \"transaction_id\": \"wd-09692f90-1b56-4138-9eb3-fe3dbb35590e\",\n        \"amount\": -2,\n        \"fromAddress\": \"\",\n        \"toAddress\": \"1145678901\",\n        \"transactionTime\": \"2024-05-12T07:49:45.897Z\",\n        \"finishTime\": \"2024-05-12T07:50:15.909Z\",\n        \"status\": \"SUCCESS\",\n        \"message\": \"Success, 2 has send to 1145678901\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{accessToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
