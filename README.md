@@ -88,16 +88,16 @@ Below is list of route provided:
   - Required body: email _(string)_, password _(string)_, name _(string)_
 - **Get user wallets**
   - Route: ``(GET) /user/wallets``
-  - Required header: authorization
+  - Required header: Bearer <jwt_token>
 - **Get user transaction histories**
   - Route: ``(GET) /user/wallets/:walletId/histories``
-  - Required header: authorization; path params: walletId _(int)_
+  - Required header: Bearer <jwt_token>; path params: walletId _(int)_
 - **Check transaction status**
   - Route: ``(GET) /transaction/:transactionId`` 
-  - Required header: authorization; path params: `transactionId` _(string)_
+  - Required header: Bearer <jwt_token>; path params: `transactionId` _(string)_
 - **User withdraw**
   - Route: ``(POST) /transaction/withdraw``
-  - Required header: authorization; body: accountType _(int)_, amout _(int/float)_, toAddress _(string)_
+  - Required header: Bearer <jwt_token>; body: accountType _(int)_, amout _(int/float)_, toAddress _(string)_
  
 ## Testing the App
 You can use 2 user for simulating the transaction. Lisf of user:
