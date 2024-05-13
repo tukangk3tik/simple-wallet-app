@@ -15,6 +15,7 @@ List of stack:
 2. [Usage](#usage)
 3. [Running with Docker](#running-with-docker)
 4. [API Documentation](#api-documentation)
+5. [Testing the App](#testing-the-app)
 
 ## Installation
 
@@ -97,3 +98,15 @@ Below is list of route provided:
 - **User withdraw**
   - Route: ``(POST) /transaction/withdraw``
   - Required header: authorization; body: accountType _(int)_, amout _(int/float)_, toAddress _(string)_
+ 
+## Testing the App
+You can use 2 user for simulating the transaction. Lisf of user:
+1. ```
+   Email: alice@prisma.io
+   Password: test1234
+   ```
+   
+2. ```
+   Email: bob@prisma.io
+   Password: test1234
+   ```
